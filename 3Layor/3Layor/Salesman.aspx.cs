@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessObject;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +13,22 @@ namespace _3Layor
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            int sID = Convert.ToInt16(txtID.Text);
+            string sName = txtSalesmanName.Text;
+            string City = txtCity.Text;
+            float commission = float.Parse(txtCommission.Text);
+
+            SalesmanBO newSalesman = new SalesmanBO()
+            {
+                SalesmanID = sID,
+                SalesmanName = sName,
+                city = City,
+                commission = commission,
+            };
         }
     }
 }
