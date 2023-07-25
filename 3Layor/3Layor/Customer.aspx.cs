@@ -1,4 +1,5 @@
-﻿using BusinessObject;
+﻿using BusinessLogic;
+using BusinessObject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,6 +32,17 @@ namespace _3Layor
                 Grade = grade,
                 SalesmanID = sID,
             };
+
+            CustomerBL businessLogic = new CustomerBL();
+            int result = businessLogic.InsertCustomer(newCustomer);
+            if (result == 0)
+            {
+                lblCustomer.Text = "Please try again";
+            }
+            else
+            {
+                lblCustomer.Text = "Customer Successfully inserted!";
+            }
 
         }
     }
