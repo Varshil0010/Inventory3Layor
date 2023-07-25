@@ -33,7 +33,7 @@
     </div>
     <div class="form-group row">
         <div class="col-sm-10">
-            <asp:Button CssClass="btn btn-primary" ID="btnSubmit" runat="server" Text="Enter Salesman"></asp:Button>&nbsp;&nbsp;
+            <asp:Button CssClass="btn btn-primary" ID="btnSubmit" runat="server" Text="Enter Salesman" OnClick="btnSubmit_Click"></asp:Button>&nbsp;&nbsp;
             <asp:Button CssClass="btn btn-secondary" ID="btnUpdate" runat="server" Text="Update Salesman"></asp:Button>&nbsp;&nbsp;
             <asp:Button CssClass="btn btn-danger" ID="btnDelete" runat="server" Text="Delete Salesman"></asp:Button>&nbsp;&nbsp;
             <asp:Label ID="lblSalesmanResult" runat="server" Text=""></asp:Label>
