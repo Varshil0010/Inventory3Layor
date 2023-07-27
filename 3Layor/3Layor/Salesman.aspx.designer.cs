@@ -60,6 +60,15 @@ namespace _3Layor
         protected global::System.Web.UI.WebControls.TextBox txtCommission;
 
         /// <summary>
+        /// lblSalesmanResult control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSalesmanResult;
+
+        /// <summary>
         /// btnSubmit control.
         /// </summary>
         /// <remarks>
@@ -85,15 +94,6 @@ namespace _3Layor
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnDelete;
-
-        /// <summary>
-        /// lblSalesmanResult control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSalesmanResult;
 
         /// <summary>
         /// gvSalesman control.

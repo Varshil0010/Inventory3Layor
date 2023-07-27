@@ -31,12 +31,12 @@
             <asp:TextBox class="form-control" ID="txtCommission" runat="server" placeholder="Commission"></asp:TextBox>
         </div>
     </div>
+     <asp:Label ID="lblSalesmanResult" runat="server" Text="" ForeColor="Red"></asp:Label>
     <div class="form-group row">
         <div class="col-sm-10">
             <asp:Button CssClass="btn btn-primary" ID="btnSubmit" runat="server" Text="Enter Salesman" OnClick="btnSubmit_Click"></asp:Button>&nbsp;&nbsp;
-            <asp:Button CssClass="btn btn-secondary" ID="btnUpdate" runat="server" Text="Update Salesman"></asp:Button>&nbsp;&nbsp;
-            <asp:Button CssClass="btn btn-danger" ID="btnDelete" runat="server" Text="Delete Salesman"></asp:Button>&nbsp;&nbsp;
-            <asp:Label ID="lblSalesmanResult" runat="server" Text=""></asp:Label>
+            <asp:Button CssClass="btn btn-secondary" ID="btnUpdate" runat="server" Text="Update Salesman" OnClick="btnUpdate_Click"></asp:Button>&nbsp;&nbsp;
+            <asp:Button CssClass="btn btn-danger" ID="btnDelete" runat="server" Text="Delete Salesman" OnClick="btnDelete_Click"></asp:Button>&nbsp;&nbsp;
         </div>
     </div>
 

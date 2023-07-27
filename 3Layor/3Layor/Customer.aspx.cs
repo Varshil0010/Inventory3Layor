@@ -18,10 +18,10 @@ namespace _3Layor
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (!IsPostBack)
-            //{
-            //    BindGridView();
-            //}
+            if (!IsPostBack)
+            {
+                BindSalesmanData();
+            }
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
@@ -52,6 +52,7 @@ namespace _3Layor
                 lblCustomer.Text = "Customer Successfully inserted!";
             }
             clearAll();
+            BindSalesmanData();
         }
 
         protected void btnUpdate_Click(object sender, EventArgs e)
@@ -83,6 +84,7 @@ namespace _3Layor
                 lblCustomer.Text = "Customer successfully updated";
             }
             clearAll();
+            BindSalesmanData();
         }
 
         protected void btnDelete_Click(object sender, EventArgs e)
@@ -106,6 +108,7 @@ namespace _3Layor
                 lblCustomer.Text = "Customer successfully deleted";
             }
             clearAll();
+            BindSalesmanData();
         }
 
         private void clearAll()
@@ -118,16 +121,17 @@ namespace _3Layor
             txtID.Focus();
         }
 
-        //private void BindGridView()
-        //{
-        //    CustomerDA customerDA = new CustomerDA();
-        //    DataTable table = customerDA.DisplayAllCustomer();
+        private void BindSalesmanData()
+        {
+            CustomerDA customerDA = new CustomerDA();
 
-        //    if(table == null && table.Rows.Count > 0)
-        //    {
-        //        gvCustomer.DataSource = table;
-        //        gvCustomer.DataBind();
-        //    }
-        //}
+            DataTable table = customerDA.DisplayAllCustomer();
+
+            if (table != null && table.Rows.Count > 0)
+            {
+                gvCustomer.DataSource = table;
+                gvCustomer.DataBind();
+            }
+        }
     }
 }
