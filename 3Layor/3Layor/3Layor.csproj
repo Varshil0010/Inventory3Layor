@@ -130,6 +130,10 @@
       <Project>{EB716997-F424-461D-80A7-AAEE63A44F5A}</Project>
       <Name>BusinessObject</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{48B6EF47-89C8-4D0A-8B77-A217A781747F}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

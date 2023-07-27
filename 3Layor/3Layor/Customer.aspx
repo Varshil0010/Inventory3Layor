@@ -39,12 +39,13 @@
         </div>
     </div>
 
+     <asp:Label ID="lblCustomer" runat="server" ForeColor="Red"></asp:Label>
+
      <div class="form-group row">
         <div class="col-sm-10">
             <asp:Button CssClass="btn btn-primary" ID="btnSubmit" runat="server" Text="Enter Customer" OnClick="btnSubmit_Click"></asp:Button>&nbsp;&nbsp;
-            <asp:Button CssClass="btn btn-secondary" ID="btnUpdate" runat="server" Text="Update Customer"></asp:Button>&nbsp;&nbsp;
-            <asp:Button CssClass="btn btn-danger" ID="btnDelete" runat="server" Text="Delete Customer"></asp:Button>&nbsp;&nbsp;
-            <asp:Label ID="lblCustomer" runat="server" Text=""></asp:Label>
+            <asp:Button CssClass="btn btn-secondary" ID="btnUpdate" runat="server" Text="Update Customer" OnClick="btnUpdate_Click"></asp:Button>&nbsp;&nbsp;
+            <asp:Button CssClass="btn btn-danger" ID="btnDelete" runat="server" Text="Delete Customer" OnClick="btnDelete_Click"></asp:Button>&nbsp;&nbsp;
         </div>
     </div>
 
