@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomerBL.cs" />
+    <Compile Include="OrderBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SalesmanBL.cs" />
   </ItemGroup>

@@ -5,35 +5,50 @@
     <br /><br />
     <h1><span class="badge badge-success btn-lg btn-block">Existing Orders</span></h1>
 
-    <p>&nbsp;</p>
-    <p>
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="order_no" DataSourceID="SqlDataSource1">
-            <Columns>
-                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowSelectButton="True" />
-                <asp:BoundField DataField="order_no" HeaderText="order_no" ReadOnly="True" SortExpression="order_no" />
-                <asp:BoundField DataField="purch_amt" HeaderText="purch_amt" SortExpression="purch_amt" />
-                <asp:BoundField DataField="ord_date" HeaderText="ord_date" SortExpression="ord_date" />
-                <asp:BoundField DataField="customer_id" HeaderText="customer_id" SortExpression="customer_id" />
-                <asp:BoundField DataField="salesman_id" HeaderText="salesman_id" SortExpression="salesman_id" />
-            </Columns>
-        </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:InventoryConnectionString %>" DeleteCommand="DELETE FROM [orders] WHERE [order_no] = @order_no" InsertCommand="INSERT INTO [orders] ([order_no], [purch_amt], [ord_date], [customer_id], [salesman_id]) VALUES (@order_no, @purch_amt, @ord_date, @customer_id, @salesman_id)" SelectCommand="SELECT * FROM [orders]" UpdateCommand="UPDATE [orders] SET [purch_amt] = @purch_amt, [ord_date] = @ord_date, [customer_id] = @customer_id, [salesman_id] = @salesman_id WHERE [order_no] = @order_no">
-            <DeleteParameters>
-                <asp:Parameter Name="order_no" Type="Int32" />
-            </DeleteParameters>
-            <InsertParameters>
-                <asp:Parameter Name="order_no" Type="Int32" />
-                <asp:Parameter Name="purch_amt" Type="Double" />
-                <asp:Parameter DbType="Date" Name="ord_date" />
-                <asp:Parameter Name="customer_id" Type="Int32" />
-                <asp:Parameter Name="salesman_id" Type="Int32" />
-            </InsertParameters>
-            <UpdateParameters>
-                <asp:Parameter Name="purch_amt" Type="Double" />
-                <asp:Parameter DbType="Date" Name="ord_date" />
-                <asp:Parameter Name="customer_id" Type="Int32" />
-                <asp:Parameter Name="salesman_id" Type="Int32" />
-                <asp:Parameter Name="order_no" Type="Int32" />
-            </UpdateParameters>
-        </asp:SqlDataSource>
+    <asp:Label ID="Label1" runat="server" Text="" ForeColor="Red"></asp:Label>
+    <div class="form-group row">
+        <label for="orderNo" class="col-sm-2 col-form-label">Order NO</label>
+        <div class="col-sm-10">
+            <asp:TextBox class="form-control" ID="orderID" runat="server" placeholder="id" ></asp:TextBox>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="purchAmt" class="col-sm-2 col-form-label">Purchase Amount</label>
+        <div class="col-sm-10">
+            <asp:TextBox class="form-control" ID="txtAmt" runat="server" placeholder="purchaseAmt"></asp:TextBox>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="date" class="col-sm-2 col-form-label">Order Date</label>
+        <div class="col-sm-10">
+           <asp:TextBox class="form-control" ID="txtDate" TextMode="Date" runat="server" placeholder="Date"></asp:TextBox>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="cID" class="col-sm-2 col-form-label">Customer ID</label>
+        <div class="col-sm-10">
+            <asp:TextBox class="form-control" ID="txtCustomerID" runat="server" placeholder="CustomerID"></asp:TextBox>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="salesmanID" class="col-sm-2 col-form-label">Salesman ID</label>
+        <div class="col-sm-10">
+            <asp:TextBox class="form-control" ID="txtSalesmanID" runat="server" placeholder="Salesman id"></asp:TextBox>
+        </div>
+    </div>
+
+     <asp:Label ID="lblOrder" runat="server" ForeColor="Red"></asp:Label>
+
+     <div class="form-group row">
+        <div class="col-sm-10">
+            <asp:Button CssClass="btn btn-primary" ID="btnSubmit" runat="server" Text="Enter Customer" OnClick="btnSubmit_Click"></asp:Button>&nbsp;&nbsp;
+            <asp:Button CssClass="btn btn-secondary" ID="btnUpdate" runat="server" Text="Update Customer" OnClick="btnUpdate_Click" ></asp:Button>&nbsp;&nbsp;
+            <asp:Button CssClass="btn btn-danger" ID="btnDelete" runat="server" Text="Delete Customer" OnClick="btnDelete_Click"></asp:Button>&nbsp;&nbsp;
+        </div>
+    </div>
+
+    <h1><span class="badge badge-success btn-lg btn-block">Existing Orders</span></h1>
+
+    <asp:GridView ID="gvOrders" runat="server"></asp:GridView>
 </asp:Content>
